@@ -1,0 +1,22 @@
+# Log started 2019-12-09 14:42
+# Record of session commands.  Please note that this will
+# likely require editing if it is to be run as a script.
+open C:\Users\Onbekeenter\R&Grelt\Grelt\gretl\new_restr_data.dta
+gnuplot  price total_area
+gnuplot  l_price total_area
+summary price total_area l_price --simple
+summary discrim_proxy Mos_center Akimanka_rajon Hamovniki_rajon \
+  Tverskoj_rajon Taganskij_rajon Krasnoselskij_rajon Mesanskij_rajon \
+  Zamoskvorece_rajon Basmannyj_rajon Arbat_rajon first_floor one_room \
+  two_rooms three_rooms starii_fond blochnii derevjannii kirpichnii \
+  monolitnii panelnii stalinskii repair four_and_over_rooms --simple
+corr price total_area discrim_proxy Mos_center Akimanka_rajon \
+  Hamovniki_rajon Tverskoj_rajon Taganskij_rajon Krasnoselskij_rajon \
+  Mesanskij_rajon Zamoskvorece_rajon Basmannyj_rajon Arbat_rajon \
+  first_floor one_room two_rooms three_rooms starii_fond blochnii \
+  derevjannii kirpichnii monolitnii panelnii stalinskii repair \
+  four_and_over_rooms
+corr price total_area discrim_proxy first_floor one_room two_rooms \
+  three_rooms starii_fond blochnii derevjannii kirpichnii monolitnii \
+  panelnii stalinskii repair four_and_over_rooms
+# store "C:\Users\Onbekeenter\R&Grelt\Grelt\gretl\new_restr_data.gdt" --gzipped=1
